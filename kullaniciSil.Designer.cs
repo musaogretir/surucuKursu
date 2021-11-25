@@ -1,6 +1,6 @@
 ﻿namespace Surucu_Kursu_Otomasyonu
 {
-    partial class kullaniciGuncelle
+    partial class kullaniciSil
     {
         /// <summary>
         /// Required designer variable.
@@ -85,7 +85,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 36);
             this.button1.TabIndex = 16;
-            this.button1.Text = "GÜNCELLE";
+            this.button1.Text = "SİL";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // label1
@@ -174,10 +174,10 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.Blue;
+            this.panel5.BackColor = System.Drawing.Color.Red;
             this.panel5.Controls.Add(this.comboBox2);
             this.panel5.Controls.Add(this.label16);
-            this.panel5.Location = new System.Drawing.Point(10, 9);
+            this.panel5.Location = new System.Drawing.Point(9, 9);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(678, 45);
@@ -187,7 +187,7 @@
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(217, 9);
+            this.comboBox2.Location = new System.Drawing.Point(218, 14);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(264, 23);
@@ -198,13 +198,13 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(64, 9);
+            this.label16.Location = new System.Drawing.Point(97, 14);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(147, 19);
+            this.label16.Size = new System.Drawing.Size(112, 19);
             this.label16.TabIndex = 0;
-            this.label16.Text = "Güncellenecek Kayıt : ";
+            this.label16.Text = "Silinecek Kayıt : ";
             // 
-            // kullaniciGuncelle
+            // kullaniciSil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -212,9 +212,9 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "kullaniciGuncelle";
+            this.Name = "kullaniciSil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Kullanıcı Güncelleme Ekranı";
+            this.Text = "Kullanıcı Silme Ekranı";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
