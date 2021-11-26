@@ -25,9 +25,31 @@ namespace Surucu_Kursu_Otomasyonu
             string dt = maskedTextBox2.Text;
             string dy = textBox3.Text;
             int cs = comboBox1.SelectedIndex + 1;
+            string adres = textBox6.Text;
+            string tel = maskedTextBox3.Text;
+            string eposta = textBox4.Text;
+            string ehliyetTur = comboBox2.Text;
+            int[] evraklar = new int[6];
 
-            kisi k = new kisi(tc, ad, soyad, dt, dy, cs);
-            k.JSONkaydet("veriler.JSON",k);
+            int i = 0;
+            foreach (Control c in panel4.Controls)//İşaretli Checkbox'ları buluyoruz.
+            {
+                if (c is CheckBox)
+                {
+                    if (((CheckBox)c).Checked) { evraklar[i] = 1; i++; } else { evraklar[i] = 0; i++; }
+                }
+            }
+
+
+            kisi k = new kisi(tc, ad, soyad, dt, dy, cs, adres, tel, eposta, ehliyetTur, evraklar);
+
+            List<kisi> liste = new List<kisi>();
+
+            liste.Add(k);
+
+            JSON j = new JSON();
+
+            j.JSONkaydet("veriler.JSON",liste);
         }
     }
 }

@@ -8,8 +8,8 @@ namespace Surucu_Kursu_Otomasyonu
 {
     internal interface Ibilgiler
     {
-        void JSONkaydet(string dosya, kisi kisi);
-        void JSONgetir();
+        void JSONkaydet(string dosya, List<kisi> liste);
+        List<kisi> JSONgetir(string dosya, List<kisi> liste);
         void JSONguncelle();
         void JSONsil();
 
