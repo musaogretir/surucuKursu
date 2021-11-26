@@ -10,7 +10,7 @@ namespace Surucu_Kursu_Otomasyonu
 {
     internal class kisi
     {
-        public long _tckimlik { get; set; }
+        public string _tckimlik { get; set; }
         public string _ad { get; set; }
         public string _soyad { get; set; }
         public string _dt { get; set; }
@@ -23,7 +23,7 @@ namespace Surucu_Kursu_Otomasyonu
         public int[] _evraklar { get; set; }
 
 
-        public kisi(long tckimlik, string ad, string soyad, string dt, string dy, int cs, string adres, string tel, string eposta, string ehliyetTuru, int[] evraklar)
+        public kisi(string tckimlik, string ad, string soyad, string dt, string dy, int cs, string adres, string tel, string eposta, string ehliyetTuru, int[] evraklar)
         {
             this._tckimlik = tckimlik;
             this._ad = ad;

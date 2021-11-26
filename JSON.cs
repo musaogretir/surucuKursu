@@ -14,7 +14,7 @@ namespace Surucu_Kursu_Otomasyonu
             if (File.Exists(dosya))
             {
                 string JSONdata = File.ReadAllText(dosya);
-                var y = JsonConvert.DeserializeObject<List<kisi>>(JSONdata);
+                liste = JsonConvert.DeserializeObject<List<kisi>>(JSONdata);
             }
             else
             {

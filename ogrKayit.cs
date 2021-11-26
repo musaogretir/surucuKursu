@@ -19,7 +19,7 @@ namespace Surucu_Kursu_Otomasyonu
 
         private void button1_Click(object sender, EventArgs e)
         {
-            long tc = Convert.ToInt64(maskedTextBox1.Text);
+            string tc = maskedTextBox1.Text;
             string ad = textBox1.Text;
             string soyad = textBox2.Text;
             string dt = maskedTextBox2.Text;
@@ -30,6 +30,7 @@ namespace Surucu_Kursu_Otomasyonu
             string eposta = textBox4.Text;
             string ehliyetTur = comboBox2.Text;
             int[] evraklar = new int[6];
+            string mesaj = "";
 
             int i = 0;
             foreach (Control c in panel4.Controls)//İşaretli Checkbox'ları buluyoruz.
@@ -41,15 +42,42 @@ namespace Surucu_Kursu_Otomasyonu
             }
 
 
-            kisi k = new kisi(tc, ad, soyad, dt, dy, cs, adres, tel, eposta, ehliyetTur, evraklar);
+            if (maskedTextBox1.Text.Length < 11) mesaj = "Geçersiz T.C. Kimlik No.";
+            if (textBox1.Text.Trim() == "") mesaj += "\nAd alanı boş olamaz.";
+            if (textBox2.Text.Trim() == "") mesaj += "\nSoyad alanı boş olamaz.";
+            if (maskedTextBox2.Text.Length < 8) mesaj += "\nGeçersiz Doğum Tarihi.";
+            if (textBox3.Text.Trim() == "") mesaj += "\nDoğum yeri alanı boş olamaz.";
+            if (comboBox1.SelectedIndex == -1) mesaj += "\nCinsiyet seçiniz.";
 
-            List<kisi> liste = new List<kisi>();
 
-            liste.Add(k);
+            if (mesaj == "")
+            {
+                kisi k = new kisi(tc, ad, soyad, dt, dy, cs, adres, tel, eposta, ehliyetTur, evraklar);
 
-            JSON j = new JSON();
+                List<kisi> liste = new List<kisi>();
 
-            j.JSONkaydet("veriler.JSON",liste);
+                liste.Add(k);
+
+                JSON j = new JSON();
+
+                j.JSONkaydet("veriler.JSON",liste);
+
+                araclar.resetForm(panel2);
+                araclar.resetForm(panel3);
+                araclar.resetForm(panel4);
+
+                MessageBox.Show("Öğrenci kaydedildi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(mesaj, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -548,6 +548,7 @@
             this.Name = "ogrBilgiGuncelle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Öğrenci Bilgi Güncelleme Ekranı";
+            this.Load += new System.EventHandler(this.ogrBilgiGuncelle_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
