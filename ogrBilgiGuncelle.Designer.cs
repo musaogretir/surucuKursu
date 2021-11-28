@@ -99,8 +99,9 @@
             this.btnCikis.Name = "btnCikis";
             this.btnCikis.Size = new System.Drawing.Size(156, 48);
             this.btnCikis.TabIndex = 27;
-            this.btnCikis.Text = "ÇIKIŞ";
+            this.btnCikis.Text = "KAPAT";
             this.btnCikis.UseVisualStyleBackColor = false;
+            this.btnCikis.Click += new System.EventHandler(this.btnCikis_Click);
             // 
             // btnGuncelle
             // 
@@ -115,6 +116,7 @@
             this.btnGuncelle.TabIndex = 26;
             this.btnGuncelle.Text = "GÜNCELLE";
             this.btnGuncelle.UseVisualStyleBackColor = false;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // panel2
             // 
@@ -405,6 +407,9 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Kadın",
+            "Erkek"});
             this.comboBox1.Location = new System.Drawing.Point(139, 167);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(189, 28);
@@ -527,6 +532,7 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(315, 28);
             this.comboBox3.TabIndex = 1;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // label16
             // 
@@ -603,9 +609,9 @@
         private Label label3;
         private Label label2;
         private Panel panel5;
-        private ComboBox comboBox3;
         private Label label16;
         private Button btnCikis;
         private Button btnGuncelle;
+        public ComboBox comboBox3;
     }
 }

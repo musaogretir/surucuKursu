@@ -54,15 +54,13 @@ namespace Surucu_Kursu_Otomasyonu
             {
                 kisi k = new kisi(tc, ad, soyad, dt, dy, cs, adres, tel, eposta, ehliyetTur, evraklar);
 
-                List<kisi> liste = new List<kisi>();
-
-                liste.Add(k);
+                Form1.tumKayitlar.Add(k);
 
                 JSON j = new JSON();
 
-                j.JSONkaydet("veriler.JSON",liste);
+                j.JSONkaydet("veriler.JSON", Form1.tumKayitlar);
 
-                araclar.resetForm(panel2);
+                araclar.resetForm(panel2);//Form alanlarını temizliyoruz.
                 araclar.resetForm(panel3);
                 araclar.resetForm(panel4);
 

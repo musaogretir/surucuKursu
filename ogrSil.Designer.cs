@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCikis = new System.Windows.Forms.Button();
-            this.btnGuncelle = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -66,6 +64,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnCikis = new System.Windows.Forms.Button();
+            this.btnSil = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -80,41 +80,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.Controls.Add(this.btnCikis);
-            this.panel1.Controls.Add(this.btnGuncelle);
             this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.btnCikis);
+            this.panel1.Controls.Add(this.btnSil);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(775, 739);
             this.panel1.TabIndex = 0;
-            // 
-            // btnCikis
-            // 
-            this.btnCikis.BackColor = System.Drawing.Color.Red;
-            this.btnCikis.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCikis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCikis.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCikis.Location = new System.Drawing.Point(598, 671);
-            this.btnCikis.Name = "btnCikis";
-            this.btnCikis.Size = new System.Drawing.Size(156, 48);
-            this.btnCikis.TabIndex = 27;
-            this.btnCikis.Text = "ÇIKIŞ";
-            this.btnCikis.UseVisualStyleBackColor = false;
-            // 
-            // btnGuncelle
-            // 
-            this.btnGuncelle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnGuncelle.Enabled = false;
-            this.btnGuncelle.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuncelle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnGuncelle.Location = new System.Drawing.Point(428, 671);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(156, 48);
-            this.btnGuncelle.TabIndex = 26;
-            this.btnGuncelle.Text = "SİL";
-            this.btnGuncelle.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -405,6 +378,9 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Kadın",
+            "Erkek"});
             this.comboBox1.Location = new System.Drawing.Point(139, 167);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(189, 28);
@@ -509,6 +485,35 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "TC Kimlik No :";
             // 
+            // btnCikis
+            // 
+            this.btnCikis.BackColor = System.Drawing.Color.Red;
+            this.btnCikis.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCikis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCikis.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCikis.Location = new System.Drawing.Point(598, 671);
+            this.btnCikis.Name = "btnCikis";
+            this.btnCikis.Size = new System.Drawing.Size(156, 48);
+            this.btnCikis.TabIndex = 27;
+            this.btnCikis.Text = "KAPAT";
+            this.btnCikis.UseVisualStyleBackColor = false;
+            this.btnCikis.Click += new System.EventHandler(this.btnCikis_Click);
+            // 
+            // btnSil
+            // 
+            this.btnSil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSil.Enabled = false;
+            this.btnSil.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSil.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSil.Location = new System.Drawing.Point(428, 671);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(156, 48);
+            this.btnSil.TabIndex = 26;
+            this.btnSil.Text = "SİL";
+            this.btnSil.UseVisualStyleBackColor = false;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Red;
@@ -527,6 +532,7 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(315, 28);
             this.comboBox3.TabIndex = 1;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // label16
             // 
@@ -548,6 +554,7 @@
             this.Name = "ogrSil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Öğrenci Silme Ekranı";
+            this.Load += new System.EventHandler(this.ogrSil_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -605,6 +612,6 @@
         private ComboBox comboBox3;
         private Label label16;
         private Button btnCikis;
-        private Button btnGuncelle;
+        private Button btnSil;
     }
 }

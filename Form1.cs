@@ -3,9 +3,19 @@ namespace Surucu_Kursu_Otomasyonu
     public partial class Form1 : Form
     {
         formKontrol fk = new formKontrol();
+
+        public static List<kisi> tumKayitlar = new List<kisi>();
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //Daha önceden dosyaya eklenmiþ kayýtlarý listeye alýyoruz.
+            JSON j = new JSON();
+            tumKayitlar = j.JSONgetir("veriler.JSON", tumKayitlar);
         }
 
         private void öðrenciKayýtToolStripMenuItem_Click(object sender, EventArgs e)
@@ -85,6 +95,6 @@ namespace Surucu_Kursu_Otomasyonu
             frm.Show();
         }
 
-        
+
     }
 }

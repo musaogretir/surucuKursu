@@ -8,7 +8,7 @@ using System.Text.Json.Serialization;
 
 namespace Surucu_Kursu_Otomasyonu
 {
-    internal class kisi
+    public class kisi
     {
         public string _tckimlik { get; set; }
         public string _ad { get; set; }
