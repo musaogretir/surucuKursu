@@ -21,9 +21,10 @@ namespace Surucu_Kursu_Otomasyonu
         public string _eposta { get; set; }
         public string _ehliyetTuru { get; set; }
         public int[] _evraklar { get; set; }
+        public kurs _kursBilgileri { get; set; }
 
 
-        public kisi(string tckimlik, string ad, string soyad, string dt, string dy, int cs, string adres, string tel, string eposta, string ehliyetTuru, int[] evraklar)
+        public kisi(string tckimlik, string ad, string soyad, string dt, string dy, int cs, string adres, string tel, string eposta, string ehliyetTuru, int[] evraklar, kurs kursBilgileri)
         {
             this._tckimlik = tckimlik;
             this._ad = ad;
@@ -36,7 +37,7 @@ namespace Surucu_Kursu_Otomasyonu
             this._eposta = eposta;
             this._ehliyetTuru = ehliyetTuru;
             this._evraklar = evraklar;
-
+            this._kursBilgileri = kursBilgileri;
         }
     }
 }
