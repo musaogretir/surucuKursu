@@ -95,7 +95,15 @@ namespace Surucu_Kursu_Otomasyonu
 
             if (mesaj == "")
             {
-                kurs kursBilgileri = new();
+                kurs.surucuKursuBilgileri skb = new kurs.surucuKursuBilgileri();
+
+                if (Form1.tumKayitlar.Count > 0)
+                {
+                    skb = (kurs.surucuKursuBilgileri)Form1.tumKayitlar[0]._kursBilgileri._skb;
+                }
+
+                kurs kursBilgileri = new kurs(skb, null, null, null);
+
                 kisi k = new kisi(tc, ad, soyad, dt, dy, cs, adres, tel, eposta, ehliyetTur, evraklar, kursBilgileri);
 
                 Form1.tumKayitlar[comboBox3.SelectedIndex] = k;
@@ -108,6 +116,8 @@ namespace Surucu_Kursu_Otomasyonu
                 araclar.resetForm(panel3);
                 araclar.resetForm(panel4);
                 comboBox3.SelectedIndex = -1;
+
+                this.ogrBilgiGuncelle_Load(null,null);
 
                 MessageBox.Show("Öğrenci bilgileri güncellendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

@@ -16,11 +16,6 @@ namespace Surucu_Kursu_Otomasyonu
                 string JSONdata = File.ReadAllText(dosya);
                 liste = JsonConvert.DeserializeObject<List<kisi>>(JSONdata);
             }
-            else
-            {
-                File.Create(dosya);
-            }
-
             return liste;
         }
 

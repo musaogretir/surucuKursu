@@ -15,7 +15,9 @@ namespace Surucu_Kursu_Otomasyonu
         {
             //Daha önceden dosyaya eklenmiþ kayýtlarý listeye alýyoruz.
             JSON j = new JSON();
-            tumKayitlar = j.JSONgetir("veriler.JSON", tumKayitlar);
+           tumKayitlar = j.JSONgetir("veriler.JSON", tumKayitlar);
+
+            //tumKayitlar.Add(new kisi("55555555555", "musa", "öðretir", "kay", "01/01/1980", 1, "y", "55", "aa","b", new int[] { 0, 0, 0, 0, 0, 0 }));
         }
 
         private void öðrenciKayýtToolStripMenuItem_Click(object sender, EventArgs e)
@@ -95,6 +97,10 @@ namespace Surucu_Kursu_Otomasyonu
             frm.Show();
         }
 
-
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            JSON j = new JSON();
+            j.JSONkaydet("veriler.JSON", Form1.tumKayitlar);
+        }
     }
 }

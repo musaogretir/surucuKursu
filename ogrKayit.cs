@@ -52,8 +52,17 @@ namespace Surucu_Kursu_Otomasyonu
 
             if (mesaj == "")
             {
-                kurs kursBilgileri = new();
-                kisi k = new kisi(tc, ad, soyad, dt, dy, cs, adres, tel, eposta, ehliyetTur, evraklar, kursBilgileri);
+                kurs.surucuKursuBilgileri skb = new kurs.surucuKursuBilgileri();
+
+                if (Form1.tumKayitlar.Count > 0)
+                {
+                     skb = (kurs.surucuKursuBilgileri)Form1.tumKayitlar[0]._kursBilgileri._skb;
+                }
+
+                kurs kursBilgileri = new kurs(skb, null, null, null);
+
+
+                kisi k = new kisi(tc, ad, soyad, dt, dy, cs, adres, tel, eposta, ehliyetTur, evraklar,kursBilgileri);
 
                 Form1.tumKayitlar.Add(k);
 
